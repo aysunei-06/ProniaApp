@@ -1,0 +1,72 @@
+﻿
+@model List<Category>
+
+@{
+    int Count = 0;
+}
+
+
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Category Table</h4>
+                <a asp-action="Create" class="btn btn-success">Add Category</a>
+                <p class="card-description">
+                    Add class <code>.table-striped</code>
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Category Id
+                                </th>
+                                <th>
+                                    Category Name
+                                </th>
+                                <th>
+                                    Category Count
+                                </th>
+                                <th>
+                                    Settings
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(Category category in Model)
+                            {
+                                Count++;
+                                <tr>
+                                    <td class="py-1">
+                                        @category.Id
+                                    </td>
+                                    <td>
+										@category.Name
+                                    </td>
+                                    <td>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        @category.Products.Count()
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary"><i class ="mdi mdi-border-color"></i></button>
+                                        <a asp-action="Detail" asp-route-id="@category.Id" class="btn btn-secondary">
+                                            <i class="mdi mdi-comment-text"></i>
+                                        </a>
+                                        <button type="button" class="btn btn-warning"><i class="mdi mdi-close"></i></button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

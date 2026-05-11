@@ -1,0 +1,21 @@
+﻿@model Category
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Category Details</h4>
+        <hr />
+        <p><strong>ID:</strong> @Model.Id</p>
+        <p><strong>Name:</strong> @Model.Name</p>
+        <p><strong>Product Count:</strong> @Model.Products.Count()</p>
+        
+        <h5>Products in this category:</h5>
+        <ul>
+            @foreach (var item in Model.Products)
+            {
+                <li>@item.Name</li>
+            }
+        </ul>
+
+        <a asp-action="Index" class="btn btn-light">Back to List</a>
+    </div>
+</div>
