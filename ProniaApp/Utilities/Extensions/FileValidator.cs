@@ -1,7 +1,7 @@
-﻿using ProniaApp.Areas.Admin.Utilities.Enums;
-using ProniaApp.Models;
+﻿using ProniaApp.Models;
+using ProniaApp.Utilities.Enums;
 
-namespace ProniaApp.Areas.Admin.Utilities.Extensions
+namespace ProniaApp.Utilities.Extensions
 {
     public static class FileValidator
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProniaApp.Areas.Admin.Utilities.Enums
+namespace ProniaApp.Utilities.Enums
 {
     public enum FileSize
     {

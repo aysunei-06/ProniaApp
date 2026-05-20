@@ -1,12 +1,12 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ProniaApp.Areas.Admin.Utilities.Enums;
-using ProniaApp.Areas.Admin.Utilities.Extensions;
 using ProniaApp.Areas.Admin.ViewModels.Create;
 using ProniaApp.Areas.Admin.ViewModels.Update;
 using ProniaApp.DAL;
 using ProniaApp.Models;
+using ProniaApp.Utilities.Enums;
+using ProniaApp.Utilities.Extensions;
 
 namespace ProniaApp.Areas.Admin.Controllers
 {

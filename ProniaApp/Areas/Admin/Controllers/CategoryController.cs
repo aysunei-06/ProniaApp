@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProniaApp.DAL;
 using ProniaApp.Models;
 
 namespace ProniaApp.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin, Moderator")]
     [Area("Admin")]
 
     public class CategoryController : Controller
