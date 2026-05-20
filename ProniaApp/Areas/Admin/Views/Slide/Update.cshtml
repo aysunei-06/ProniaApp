@@ -1,0 +1,53 @@
+﻿
+
+@model UpdateVM
+
+
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Update Slide</h4>
+                <p class="card-description">
+                    Basic form elements
+                </p>
+
+                <form class="forms-sample" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <img src="~/assets/images/website-images/@Model.ImageUrl" alt="image" style="width:50px;height:50px;" />
+                        <input asp-for="@Model.ImageUrl" type="hidden"  name="Name"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputName1" method="post">Name</label>
+                        <input asp-for="Name" type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                        <span asp-validation-for="Name" style="color:darkred"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPhoto1" method="post">Image</label>
+                        <input asp-for="Photo" type="file" class="form-control" id="exampleInputPhoto1">
+                        <span asp-validation-for="Photo" style="color:darkred"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputDescription1" method="post">Description</label>
+                        <input asp-for="Description" type="text" class="form-control" id="exampleInputDescription1" placeholder="Description">
+                        <span asp-validation-for="Description" style="color:darkred"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputDiscount1" method="post">Discount</label>
+                        <input asp-for="Discount" type="text" class="form-control" id="exampleInputDiscount1" placeholder="Discount">
+                        <span asp-validation-for="Discount" style="color:darkred"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputOrder1" method="post">Order</label>
+                        <input asp-for="Order" type="text" class="form-control" id="exampleInputOrder1" placeholder="Order">
+                        <span asp-validation-for="Order" style="color:darkred"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

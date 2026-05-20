@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using ProniaApp.Models;
 
 namespace ProniaApp
 {
@@ -13,7 +15,22 @@ namespace ProniaApp
                 options.UseSqlServer("Server=DESKTOP-N25NMAO\\SQLEXPRESS;Database=ProniaAppDB;Trusted_Connection=True;Encrypt=False");
             });
 
+            builder.Services.AddIdentity<AppUser, IdentityRole>(opt=>
+            {
+                opt.Password.RequireNonAlphanumeric = true;
+                opt.Password.RequiredLength = 8;
+                opt.User.RequireUniqueEmail = true;
+                opt.Lockout.MaxFailedAccessAttempts = 3;
+                opt.Lockout.AllowedForNewUsers = true;
+                opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+            }).AddEntityFrameworkStores<DAL.AppDBContext>().AddDefaultTokenProviders();
+
+
             var app = builder.Build();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
+
             app.UseStatusCodePagesWithReExecute("/Error/NotFoundPage");
 
             app.UseStaticFiles();
